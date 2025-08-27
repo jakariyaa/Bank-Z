@@ -79,10 +79,10 @@ Bank-Z follows a layered architecture pattern with clear separation of concerns,
 
 ```mermaid
 flowchart TB
-    A[Presentation\n(FXML/CSS)] --> B[Controllers\n(JavaFX)]
-    B --> C[Services\n(Business Logic)]
-    C --> D[DAOs\n(Data Access)]
-    D --> E[Database\n(SQLite)]
+    A[Presentation (FXML/CSS)] --> B[Controllers (JavaFX)]
+    B --> C[Services (Business Logic)]
+    C --> D[DAOs (Data Access)]
+    D --> E[Database (SQLite)]
 ```
 
 ## Prerequisites
