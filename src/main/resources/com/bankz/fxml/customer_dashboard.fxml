@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bankz.controllers.CustomerDashboardController" 
+             stylesheets="@../styles/style.css" styleClass="dashboard"
+             prefHeight="720.0" prefWidth="1280.0">
+    
+    <!-- Sidebar Navigation -->
+    <left>
+        <VBox styleClass="sidebar" prefWidth="250.0" spacing="12.0">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            
+            <Label text="Bank-Z" styleClass="login-title">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="25.0" />
+                </VBox.margin>
+            </Label>
+            
+            <Button fx:id="dashboardButton" onAction="#handleDashboard" text="Dashboard" styleClass="sidebar-button" />
+            <Button fx:id="accountsButton" onAction="#handleAccounts" text="Accounts" styleClass="sidebar-button" />
+            <Button fx:id="transferButton" onAction="#handleTransfer" text="Transfer" styleClass="sidebar-button" />
+            <Button fx:id="depositWithdrawButton" onAction="#handleDepositWithdraw" text="Deposit/Withdraw" styleClass="sidebar-button" />
+            <Button fx:id="transactionsButton" onAction="#handleTransactions" text="Transactions" styleClass="sidebar-button" />
+            
+            <Region VBox.vgrow="ALWAYS" />
+            
+            <Button fx:id="logoutButton" onAction="#handleLogout" text="Logout" styleClass="button-secondary" />
+        </VBox>
+    </left>
+    
+    <!-- Main Content Area -->
+    <center>
+        <VBox spacing="24.0">
+            <padding>
+                <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+            </padding>
+            
+            <!-- Header -->
+            <HBox alignment="CENTER_RIGHT">
+                <Label fx:id="welcomeLabel" styleClass="dashboard-title" />
+            </HBox>
+            
+            <Separator />
+            
+            <!-- Dashboard Content -->
+            <ScrollPane fx:id="contentScrollPane" fitToWidth="true" VBox.vgrow="ALWAYS">
+                <VBox fx:id="contentArea" spacing="24.0">
+                    <!-- Dashboard Overview -->
+                    <VBox fx:id="dashboardOverview" spacing="24.0">
+                        <Label text="Account Summary" styleClass="dashboard-title" />
+                        
+                        <GridPane hgap="24.0" vgap="24.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                                <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                            </columnConstraints>
+                            
+                            <VBox fx:id="accountsSummaryContainer" GridPane.columnIndex="0" spacing="12.0">
+                                <Label text="My Accounts" styleClass="form-label" />
+                                <VBox fx:id="accountsContainer" spacing="12.0" />
+                            </VBox>
+                            
+                            <VBox fx:id="transactionsSummaryContainer" GridPane.columnIndex="1" spacing="12.0">
+                                <Label text="Recent Transactions" styleClass="form-label" />
+                                <VBox fx:id="transactionsContainer" spacing="8.0" />
+                            </VBox>
+                        </GridPane>
+                    </VBox>
+                    
+                    <!-- Accounts View -->
+                    <VBox fx:id="accountsView" spacing="24.0" visible="false">
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                            <Label text="My Accounts" styleClass="dashboard-title" />
+                            <Button fx:id="createAccountButton" onAction="#handleCreateAccount" text="Create Account" styleClass="button-primary" />
+                        </HBox>
+                        
+                        <TableView fx:id="accountsTable" styleClass="table-view">
+                            <columns>
+                                <TableColumn fx:id="accountNumberColumn" text="Account Number" prefWidth="200.0" />
+                                <TableColumn fx:id="accountTypeColumn" text="Type" prefWidth="120.0" />
+                                <TableColumn fx:id="accountBalanceColumn" text="Balance" prefWidth="150.0" />
+                                <TableColumn fx:id="accountStatusColumn" text="Status" prefWidth="120.0" />
+                            </columns>
+                        </TableView>
+                    </VBox>
+                    
+                    <!-- Transactions View -->
+                    <VBox fx:id="transactionsView" spacing="24.0" visible="false">
+                        <Label text="Transaction History" styleClass="dashboard-title" />
+                        
+                        <HBox spacing="12.0" alignment="CENTER_LEFT">
+                            <Label text="Filter by Account:" />
+                            <ComboBox fx:id="accountFilterComboBox" prefWidth="250.0" />
+                            <Button fx:id="refreshTransactionsButton" onAction="#handleRefreshTransactions" text="Refresh" styleClass="button-secondary" />
+                        </HBox>
+                        
+                        <TableView fx:id="transactionsTable" styleClass="table-view">
+                            <columns>
+                                <TableColumn fx:id="transactionDateColumn" text="Date" prefWidth="150.0" />
+                                <TableColumn fx:id="transactionTypeColumn" text="Type" prefWidth="120.0" />
+                                <TableColumn fx:id="transactionAmountColumn" text="Amount" prefWidth="120.0" />
+                                <TableColumn fx:id="transactionDescriptionColumn" text="Description" prefWidth="300.0" />
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </VBox>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>

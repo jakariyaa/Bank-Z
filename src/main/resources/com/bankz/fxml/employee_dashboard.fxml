@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bankz.controllers.EmployeeDashboardController" 
+      stylesheets="@../styles/style.css" styleClass="dashboard"
+      prefHeight="720.0" prefWidth="1280.0">
+    <padding>
+        <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+    </padding>
+    
+    <HBox alignment="CENTER_RIGHT" spacing="12.0">
+        <Label fx:id="welcomeLabel" styleClass="dashboard-title" />
+        <Button fx:id="logoutButton" onAction="#handleLogout" text="Logout" styleClass="button-secondary" />
+    </HBox>
+    
+    <Separator />
+    
+    <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+            <Tab text="Customer Management">
+                <content>
+                    <VBox spacing="16.0">
+                        <padding>
+                            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                        </padding>
+                        
+                        <HBox spacing="12.0">
+                            <Button fx:id="createCustomerButton" onAction="#handleCreateCustomer" text="Create Customer" styleClass="button-primary" />
+                            <Button fx:id="searchCustomerButton" onAction="#handleSearchCustomer" text="Search Customer" styleClass="button-secondary" />
+                        </HBox>
+                        
+                        <TableView fx:id="customersTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="customerIdColumn" text="ID" prefWidth="80.0" />
+                                <TableColumn fx:id="customerNameColumn" text="Name" prefWidth="200.0" />
+                                <TableColumn fx:id="customerUsernameColumn" text="Username" prefWidth="150.0" />
+                                <TableColumn fx:id="customerDateCreatedColumn" text="Date Created" prefWidth="150.0" />
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+            <Tab text="Account Management">
+                <content>
+                    <VBox spacing="16.0">
+                        <padding>
+                            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                        </padding>
+                        
+                        <HBox spacing="12.0">
+                            <Button fx:id="createAccountButton" onAction="#handleCreateAccount" text="Create Account" styleClass="button-primary" />
+                            <Button fx:id="searchAccountButton" onAction="#handleSearchAccount" text="Search Account" styleClass="button-secondary" />
+                            <Button fx:id="freezeAccountButton" onAction="#handleFreezeAccount" text="Freeze Account" styleClass="button-secondary" />
+                            <Button fx:id="closeAccountButton" onAction="#handleCloseAccount" text="Close Account" styleClass="button-secondary" />
+                        </HBox>
+                        
+                        <TableView fx:id="accountsTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="accountIdColumn" text="ID" prefWidth="80.0" />
+                                <TableColumn fx:id="accountNumberColumn" text="Account Number" prefWidth="200.0" />
+                                <TableColumn fx:id="accountTypeColumn" text="Type" prefWidth="120.0" />
+                                <TableColumn fx:id="accountBalanceColumn" text="Balance" prefWidth="150.0" />
+                                <TableColumn fx:id="accountStatusColumn" text="Status" prefWidth="120.0" />
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+            <Tab text="Transaction Viewer">
+                <content>
+                    <VBox spacing="16.0">
+                        <padding>
+                            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                        </padding>
+                        
+                        <HBox spacing="12.0">
+                            <Button fx:id="viewTransactionsButton" onAction="#handleViewTransactions" text="View All Transactions" styleClass="button-primary" />
+                        </HBox>
+                        
+                        <TableView fx:id="transactionsTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="transactionIdColumn" text="ID" prefWidth="80.0" />
+                                <TableColumn fx:id="transactionSourceColumn" text="Source Account" prefWidth="150.0" />
+                                <TableColumn fx:id="transactionDestinationColumn" text="Destination Account" prefWidth="150.0" />
+                                <TableColumn fx:id="transactionTypeColumn" text="Type" prefWidth="120.0" />
+                                <TableColumn fx:id="transactionAmountColumn" text="Amount" prefWidth="120.0" />
+                                <TableColumn fx:id="transactionDateColumn" text="Date" prefWidth="150.0" />
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+        </tabs>
+    </TabPane>
+</VBox>

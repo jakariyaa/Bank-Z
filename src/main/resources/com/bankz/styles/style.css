@@ -1,0 +1,303 @@
+/* Main application styling */
+.root {
+    -fx-background-color: #F5F5F5;
+    -fx-font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+}
+
+/* Login screen styling */
+.login-screen {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 12, 0, 0, 0);
+    -fx-padding: 24px;
+}
+
+.login-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #212121;
+}
+
+/* Text fields styling - Updated to match UI guide */
+.text-field, .password-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 12px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #1E88E5;
+    -fx-effect: dropshadow(gaussian, rgba(30, 136, 229, 0.3), 5, 0, 0, 0);
+}
+
+/* Error state for input fields */
+.text-field:error, .password-field:error {
+    -fx-border-color: #E53935;
+}
+
+/* Button styling - Updated to match UI guide */
+.button-primary {
+    -fx-background-color: #1E88E5;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 12 24;
+    -fx-background-radius: 6;
+    -fx-font-size: 14px;
+}
+
+.button-primary:hover {
+    -fx-background-color: #1565C0;
+}
+
+.button-primary:pressed {
+    -fx-background-color: #0D47A1;
+}
+
+.button-primary:disabled {
+    -fx-background-color: #CCCCCC;
+    -fx-text-fill: #757575;
+}
+
+/* Secondary button styling */
+.button-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1E88E5;
+    -fx-border-color: #1E88E5;
+    -fx-border-width: 1px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 24;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-font-size: 14px;
+}
+
+.button-secondary:hover {
+    -fx-background-color: #E3F2FD;
+}
+
+/* Message label styling - Updated with color palette */
+.message-label {
+    -fx-text-fill: #E53935;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.message-label-success {
+    -fx-text-fill: #43A047;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.message-label-warning {
+    -fx-text-fill: #FB8C00;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Dashboard styling - Updated with proper spacing */
+.dashboard {
+    -fx-background-color: #F5F5F5;
+    -fx-padding: 24px;
+    -fx-spacing: 24px;
+}
+
+.dashboard-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #212121;
+}
+
+/* Account card styling - Updated with color palette */
+.account-card {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 0);
+    -fx-spacing: 12px;
+}
+
+.account-type {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #212121;
+}
+
+.account-number {
+    -fx-font-size: 14px;
+    -fx-text-fill: #757575;
+}
+
+.account-balance {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E88E5;
+}
+
+/* Transaction list styling */
+.transaction-list {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 16px;
+    -fx-spacing: 8px;
+}
+
+.transaction-item {
+    -fx-border-color: #f0f0f0;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 12px 0;
+    -fx-spacing: 12px;
+}
+
+.transaction-item:last {
+    -fx-border-width: 0;
+}
+
+.transaction-amount-deposit {
+    -fx-text-fill: #43A047;
+    -fx-font-weight: bold;
+}
+
+.transaction-amount-withdrawal {
+    -fx-text-fill: #E53935;
+    -fx-font-weight: bold;
+}
+
+.transaction-amount-transfer {
+    -fx-text-fill: #1E88E5;
+    -fx-font-weight: bold;
+}
+
+/* Form styling - Updated with proper spacing */
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #212121;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 6 0;
+}
+
+.form-input {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 12px;
+    -fx-font-size: 14px;
+}
+
+/* Table styling - Updated with alternating row colors */
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-table-cell-border-color: transparent;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #F5F5F5;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-column {
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 8;
+}
+
+.table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent;
+    -fx-padding: 10 8;
+}
+
+.table-row-cell:filled:hover {
+    -fx-background-color: #E3F2FD;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #FAFAFA;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #BBDEFB;
+}
+
+/* Dialog styling */
+.dialog {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 12, 0, 0, 0);
+    -fx-padding: 24px;
+}
+
+/* Sidebar navigation styling */
+.sidebar {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 1 0 0;
+    -fx-padding: 24px;
+    -fx-spacing: 12px;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #212121;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 16 20;
+    -fx-border-radius: 6px;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #E3F2FD;
+}
+
+.sidebar-button:selected {
+    -fx-background-color: #1E88E5;
+    -fx-text-fill: white;
+}
+
+/* Success and error banners */
+.success-banner {
+    -fx-background-color: #E8F5E9;
+    -fx-border-color: #43A047;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-padding: 16px;
+    -fx-text-fill: #2E7D32;
+}
+
+.error-banner {
+    -fx-background-color: #FFEBEE;
+    -fx-border-color: #E53935;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-padding: 16px;
+    -fx-text-fill: #C62828;
+}
+
+.warning-banner {
+    -fx-background-color: #FFF3E0;
+    -fx-border-color: #FB8C00;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-padding: 16px;
+    -fx-text-fill: #EF6C00;
+}
